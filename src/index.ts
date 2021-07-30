@@ -26,6 +26,22 @@ async function main(){
         res.render('index')
     })
 
+    app.get("/register",async(req,res)=>{
+        res.render("register")
+    })
+
+    app.post("/register",async(req,res)=>{
+        res.render("register")
+    })
+
+    app.get("/login",async(req,res)=>{
+        res.render("login")
+    })
+
+    app.post("/login",async(req,res)=>{
+        res.render("login")
+    })
+
     app.listen(5002)
 }
 
