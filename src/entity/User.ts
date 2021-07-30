@@ -1,43 +1,39 @@
-
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("account")
 export class User {
-    constructor(
+  constructor(
+    firstName: string,
 
-    firstName:string,
+    lastName: string,
 
-    lastName:string,
+    userName: string,
 
-    userName:string,
+    email: string,
+    password: string
+  ) {
+    this.firstName = firstName;
+    this.password = password;
+    this.userName = userName;
+    this.lastName = lastName;
 
-        email:string,
-    password:string,
+    this.email = email;
+  }
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    ){
-        this.firstName = firstName;
-        this.password = password
-        this.userName = userName
-        this.lastName = lastName
+  @Column()
+  firstName: string;
 
-        this.email = email
+  @Column()
+  lastName: string;
 
-    }
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  userName: string;
 
-    @Column()
-    firstName:string;
+  @Column()
+  password: string;
 
-    @Column()
-    lastName:string;
-
-    @Column()
-    userName:string;
-
-    @Column()
-    password:string;
-
-    @Column()
-    email:string
+  @Column()
+  email: string;
 }

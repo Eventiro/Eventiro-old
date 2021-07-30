@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 
 //For secure connection:
 import * as fs from "fs";
@@ -12,8 +12,8 @@ module.exports = {
   database: process.env.DB,
   //For secure connection:
   ssl: {
-     ca: fs.readFileSync('./cert.crt').toString()
-   },
+    ca: fs.readFileSync("./cert.crt").toString(),
+  },
   synchronize: true,
   logging: false,
   entities: ["src/entity/**/*.ts"],
