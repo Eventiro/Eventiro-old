@@ -11,6 +11,7 @@ import express from "express";
 import register from "./controller/register";
 import login from "./controller/login";
 import create from "./controller/create";
+import index from "./controller/index";
 
 import { redirectIfNoLogin } from "./authMiddleware";
 
@@ -38,11 +39,7 @@ async function main() {
   app.use("/register", register);
   app.use("/login", login);
   app.use("/create", create);
-
-  app.get("/", redirectIfNoLogin, async (req, res) => {
-    const user = getRepository(User).findOne(req.session.userId);
-    res.render("index");
-  });
+  app.use("/", index);
 
   app.listen(5002);
 }
