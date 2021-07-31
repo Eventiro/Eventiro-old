@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Event } from "./Event";
 
 @Entity("account")
 export class User {
@@ -19,6 +20,7 @@ export class User {
 
     this.email = email;
   }
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -36,4 +38,7 @@ export class User {
 
   @Column()
   email: string;
+
+  @OneToMany(() => Event, (event) => event.user)
+  events: Event[];
 }
