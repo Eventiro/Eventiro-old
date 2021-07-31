@@ -1,0 +1,21 @@
+each joinReq in joinRequests
+    p= joinReq.user.email
+    p= joinReq.id
+    p= joinReq.message
+    form(action="/event/#{joinReq.event.id}/manage" method="POST")
+        input(hidden name="type" value="allow")
+        input(hidden name="joinReqId" value=joinReq.id)
+        input(type="submit")
+
+    form(action="/event/#{joinReq.event.id}/manage" method="POST")
+        input(hidden name="type" value="remove")
+        input(hidden name="joinReqId" value=joinReq.id)
+        input(type="submit")
+
+    p= joinReq.status
+
+    <hr />
+
+
+
+p= error

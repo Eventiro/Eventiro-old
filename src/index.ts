@@ -12,6 +12,8 @@ import register from "./controller/register";
 import login from "./controller/login";
 import create from "./controller/create";
 import index from "./controller/index";
+import joinReq from "./controller/join";
+import eventAdmin from "./controller/event";
 
 declare module "express-session" {
   interface SessionData {
@@ -37,6 +39,9 @@ async function main() {
   app.use("/register", register);
   app.use("/login", login);
   app.use("/create", create);
+  app.use("/join", joinReq);
+  app.use("/event", eventAdmin);
+
   app.use("/", index);
 
   app.listen(5002);

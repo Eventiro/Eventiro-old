@@ -1,1 +1,8 @@
 h1 Eventiro
+
+each event in events
+    p= event.id
+    form(action="/join" method="POST")
+        input(type="text" hidden name="id" value=event.id)
+        input(name="message")
+        input(type="submit")
