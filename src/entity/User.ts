@@ -1,5 +1,6 @@
 import { Column, OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { Event } from "./Event";
+import { JoinRequest } from "./JoinRequest";
 
 @Entity("account")
 export class User {
@@ -41,4 +42,7 @@ export class User {
 
   @OneToMany(() => Event, (event) => event.user)
   events: Event[];
+
+  @OneToMany(() => JoinRequest, (joinReq) => joinReq.user)
+  joinRequests: JoinRequest[];
 }
