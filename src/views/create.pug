@@ -1,0 +1,11 @@
+form(action="/create" method="POST")
+    input(name="name",type="text" placeholder="name")
+    input(name="startDate",type="date" placeholder="start")
+    input(name="endDate",type="date" placeholder="end")
+    input(name="maxMembers",type="number" placeholder="maxMembers")
+    input(name="description",type="text" placeholder="desc")
+    input(name="location",type="text" placeholder="location")
+    input(type="submit")
+
+    p= error
+    p= msg

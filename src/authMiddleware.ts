@@ -15,8 +15,14 @@ export function redirectIfLogin(
   next();
 }
 
-export function redirectIfNoLogin(req: express.Request, res: express.Response) {
+export function redirectIfNoLogin(
+  req: express.Request,
+  res: express.Response,
+  next: any
+) {
   if (!req.session.userId) {
     res.redirect("/login");
+    return;
   }
+  next();
 }

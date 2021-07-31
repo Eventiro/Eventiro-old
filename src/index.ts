@@ -10,6 +10,8 @@ import express from "express";
 
 import register from "./controller/register";
 import login from "./controller/login";
+import create from "./controller/create";
+
 import { redirectIfNoLogin } from "./authMiddleware";
 
 declare module "express-session" {
@@ -35,9 +37,10 @@ async function main() {
 
   app.use("/register", register);
   app.use("/login", login);
+  app.use("/create", create);
 
-  app.get("/", async (req, res) => {
-    redirectIfNoLogin(req, res);
+  app.get("/", redirectIfNoLogin, async (req, res) => {
+    const user = getRepository(User).findOne(req.session.userId);
     res.render("index");
   });
 
