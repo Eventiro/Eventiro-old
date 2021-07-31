@@ -8,7 +8,7 @@ const app = express.Router();
 
 app.use(redirectIfNoLogin);
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.render("create");
 });
 

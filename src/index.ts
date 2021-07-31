@@ -13,8 +13,6 @@ import login from "./controller/login";
 import create from "./controller/create";
 import index from "./controller/index";
 
-import { redirectIfNoLogin } from "./authMiddleware";
-
 declare module "express-session" {
   interface SessionData {
     userId: number;

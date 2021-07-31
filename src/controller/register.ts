@@ -9,7 +9,7 @@ const app = express.Router();
 
 app.use(redirectIfLogin);
 
-app.get("/", async (req, res) => {
+app.get("/", async (_, res) => {
   res.render("register");
 });
 

@@ -5,10 +5,7 @@ export function redirectIfLogin(
   res: express.Response,
   next: any
 ) {
-  console.log("called");
-  console.log(req.session.userId);
   if (req.session.userId) {
-    console.log("here");
     res.redirect("/");
     return;
   }

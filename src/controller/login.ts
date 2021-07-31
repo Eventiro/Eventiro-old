@@ -8,7 +8,7 @@ const app = express.Router();
 
 app.use(redirectIfLogin);
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.render("login");
 });
 

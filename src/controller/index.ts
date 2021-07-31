@@ -6,7 +6,7 @@ import { Event } from "../entity/Event";
 const app = express.Router();
 app.use(redirectIfNoLogin);
 
-app.get("/", async (req, res) => {
+app.get("/", async (_, res) => {
   const events = await getRepository(Event).find();
 
   res.render("index", { events });
