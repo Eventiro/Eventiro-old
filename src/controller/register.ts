@@ -2,9 +2,12 @@ import { User } from "../entity/User";
 import { hash } from "bcrypt";
 import { getRepository } from "typeorm";
 import express from "express";
+import { redirectIfLogin } from "../authMiddleware";
 
 // Mounted under /register
 const app = express.Router();
+
+app.use(redirectIfLogin);
 
 app.get("/", async (req, res) => {
   res.render("register");
@@ -17,7 +20,6 @@ app.post("/", async (req, res) => {
     where: { email: req.body.email },
   });
   if (userCount) {
-    res.status(400);
     res.render("register", { error: "User already exists" });
     return;
   }
@@ -33,6 +35,7 @@ app.post("/", async (req, res) => {
 
   await userRepo.save(user);
 
+  req.session.userId = user.id;
   res.render("register", { msg: "Success" });
 });
 

@@ -9,6 +9,14 @@ import session from "express-session";
 import express from "express";
 
 import register from "./controller/register";
+import login from "./controller/login";
+import { redirectIfNoLogin } from "./authMiddleware";
+
+declare module "express-session" {
+  interface SessionData {
+    userId: number;
+  }
+}
 
 async function main() {
   await createConnection();
@@ -26,17 +34,11 @@ async function main() {
   );
 
   app.use("/register", register);
+  app.use("/login", login);
 
   app.get("/", async (req, res) => {
+    redirectIfNoLogin(req, res);
     res.render("index");
-  });
-
-  app.get("/login", async (req, res) => {
-    res.render("login");
-  });
-
-  app.post("/login", async (req, res) => {
-    res.render("login");
   });
 
   app.listen(5002);
