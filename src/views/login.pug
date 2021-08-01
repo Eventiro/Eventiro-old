@@ -20,7 +20,7 @@ html
 
             .container 
                 h1.container__title Log In
-                form.container__form(autocomplete="off" action="/login" method="POST")
+                form.container__form( action="/login" method="POST")
                     .container__form--field
                         label.container__form--field__label Email
                         .container__form--field__data
@@ -36,4 +36,4 @@ html
                         button(type="submit").container__form--submit__btn Log In
                     .container__form--login 
                         span.container__form--login__text Not Registered Yet? 
-                        a.container__form--login__link(href="/login") Register
+                        a.container__form--login__link(href="/register") Register

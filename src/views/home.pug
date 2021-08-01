@@ -3,24 +3,18 @@ mixin event(eventData)
         .event__details
             .event__details--data
                 .event__details--data__title= eventData.title
-                .event__details--data__host= eventData.host
-            - let memMsg = (eventData.members) + ' members';
+                .event__details--data__host= eventData.title
+            - let memMsg = (eventData.joinedMembers) + ' members';
             .event__details--members= memMsg
             .event__details--share
                 button.event__details--share__button
                     i.fas.fa-share-alt.event__details--share__button--icon
         .event__main
-            .event__main__members
-                .event__main__members--pfp
-                    img&attributes(eventData.pfp1).event__main__members--pfp__img
-                .event__main__members--pfp
-                    img&attributes(eventData.pfp2).event__main__members--pfp__img
-                - let lesserMem = "+" + (eventData.members-2);
-                .event__main__members--pfp= lesserMem
             .event__main__description
                 p.event__main__description--text= eventData.description
-            .event__actions
-                button.event__actions--join Ask to Join 
+            form.event__actions(action="/join" method="POST")
+                input(hidden name="id" value=eventData.id)
+                button.event__actions--join(type="submit") Ask to Join 
                 button.event__actions--info Get Required Info
             
 doctype html
