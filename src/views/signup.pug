@@ -1,0 +1,49 @@
+doctype html 
+html 
+    head 
+        title Eventiro - Sign Up 
+        link(rel="stylesheet", href="/static/css/signup.css")
+        link(rel="stylesheet", href="/static/css/home.css")
+        link(rel="shortcut icon", href="/static/img/favicon.png", type="image/x-icon")
+        script(src="https://kit.fontawesome.com/9031ae7b04.js", crossorigin="anonymous")
+        script(src="/static/js/show.js", defer)
+
+    body 
+        header 
+            nav.navbar 
+                a(href="/").navbar__logo 
+                    img(src="/static/img/logo.png").navbar__logo--img
+                ul.navbar__list 
+        main 
+            .circles#circle1 
+            .circles#circle2
+
+            .container 
+                h1.container__title Sign Up
+                form.container__form( action="/register" method="POST")
+                    .container__form--field
+                        label.container__form--field__label Name
+                        .container__form--field__data
+                            i.fas.fa-signature.container__form--field__data__input--icon
+                            input(type="text", name="name", autocomplete="off", placeholder="We would love to know your good name :D").container__form--field__data__input
+                    .container__form--field
+                        label.container__form--field__label Username
+                        .container__form--field__data
+                            i.fas.fa-user.container__form--field__data__input--icon
+                            input(type="text", name="username", autocomplete="off", placeholder="Choose a catchy username").container__form--field__data__input
+                    .container__form--field
+                        label.container__form--field__label Email
+                        .container__form--field__data
+                            i.far.fa-envelope.container__form--field__data__input--icon
+                            input(type="email", name="email", autocomplete="off", placeholder="Enter your email, we won't spam you :)").container__form--field__data__input
+                    .container__form--field
+                        label.container__form--field__label Password
+                        .container__form--field__data
+                            i.fas.fa-lock.container__form--field__data__input--icon
+                            input(type="password", name="password", autocomplete="off", placeholder="Shh! Choose a good password").container__form--field__data__input#form__password
+                            button(type="button").container__form--field__data--show Show
+                    .container__form--submit
+                        button(type="submit").container__form--submit__btn Sign Up
+                    .container__form--login 
+                        span.container__form--login__text Already Registered? 
+                        a.container__form--login__link(href="/login") Login

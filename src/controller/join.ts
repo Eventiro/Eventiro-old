@@ -16,10 +16,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+    console.log(req.body)
   const eventId = req.body.id;
 
   const user = await getRepository(User).findOne(req.session.userId);
-  const event = await getRepository(Event).findOne(eventId);
+  const event = await getRepository(Event).findOne({
+      where:{
+
+          id:eventId},relations:["user"]
+  });
 
   if (event.joinedMembers === event.maxMembers) {
     res.render("join", { error: "max members reached" });

@@ -1,0 +1,48 @@
+mixin event(eventData)
+    .event 
+        .event__details
+            .event__details--data
+                .event__details--data__title= eventData.title
+                .event__details--data__host= eventData.title
+            - let memMsg = (eventData.joinedMembers) + ' members';
+            .event__details--members= memMsg
+            .event__details--share
+                button.event__details--share__button
+                    i.fas.fa-share-alt.event__details--share__button--icon
+        .event__main
+            .event__main__description
+                p.event__main__description--text= eventData.description
+            form.event__actions(action="/join" method="POST")
+                input(hidden name="id" value=eventData.id)
+                button.event__actions--join(type="submit") Ask to Join 
+                button.event__actions--info Get Required Info
+            
+doctype html
+html
+    head 
+        title Eventiro - Home
+        link(rel="stylesheet", href="static/css/home.css")
+        script(src="https://kit.fontawesome.com/9031ae7b04.js", crossorigin="anonymous")
+        link(rel="shortcut icon", href="/static/img/favicon.png", type="image/x-icon")
+    body 
+        header 
+            nav.navbar 
+                a(href="/").navbar__logo 
+                    img(src="/static/img/logo.png").navbar__logo--img
+                ul.navbar__list 
+                    if isLoggedIn
+                        li.navbar__list__item.navbar__create
+                            a.navbar__list__item--link 
+                                i.fas.fa-plus.navbar__list__item--link--icon
+                                | Create
+                        li.navbar__list__item.navbar__profile
+                            a.navbar__list__item--link
+                                img(src="/static/img/steveJobs.png").navbar__list__item--link--img
+                    else 
+                        li.navbar__list__item.navbar__login.navbar__create
+                            a.navbar__list__item--link Log In
+                        li.navbar__list__item.navbar__signup
+                            a(href="/signup").navbar__list__item--link Sign Up
+         
+        main 
+            +event(event)

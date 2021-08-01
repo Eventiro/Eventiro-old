@@ -6,10 +6,10 @@ import { Event } from "../entity/Event";
 const app = express.Router();
 app.use(redirectIfNoLogin);
 
-app.get("/", async (_, res) => {
+app.get("/", async (req, res) => {
   const events = await getRepository(Event).find();
 
-  res.render("index", { events });
+  res.render("home", { isLoggedIn: req.session.userId, event: events[0] });
 });
 
 export default app;
