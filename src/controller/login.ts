@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
   }
 
   req.session.userId = user.id;
-  res.render("login", { isLoggedIn: true, msg: "Sucess" });
+  res.redirect("/")
 });
 
 export default app;

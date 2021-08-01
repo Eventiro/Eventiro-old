@@ -2,8 +2,8 @@ mixin event(eventData)
     .event 
         .event__details
             .event__details--data
-                .event__details--data__title= eventData.title
-                .event__details--data__host= eventData.title
+                a(href=`/event/${eventData.id}/manage`).event__details--data__title= eventData.name
+                .event__details--data__host= eventData.user.userName
             - let memMsg = (eventData.joinedMembers) + ' members';
             .event__details--members= memMsg
             .event__details--share
@@ -14,6 +14,7 @@ mixin event(eventData)
                 p.event__main__description--text= eventData.description
             form.event__actions(action="/join" method="POST")
                 input(hidden name="id" value=eventData.id)
+                input(hidden name="message" value="")
                 button.event__actions--join(type="submit") Ask to Join 
                 button.event__actions--info Get Required Info
             
@@ -45,4 +46,5 @@ html
                             a(href="/signup").navbar__list__item--link Sign Up
          
         main 
-            +event(event)
+            each event in events
+                +event(event)

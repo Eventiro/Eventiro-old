@@ -1,20 +1,39 @@
-each joinReq in joinRequests
-    p= joinReq.user.email
-    p= joinReq.id
-    p= joinReq.message
-    form(action="/event/#{joinReq.event.id}/manage" method="POST")
-        input(hidden name="type" value="allow")
-        input(hidden name="joinReqId" value=joinReq.id)
-        input(type="submit")
+doctype html
+html 
+    head 
+        title Eventiro - Create Event
+        link(rel="shortcut icon", href="/static/img/favicon.png")
+        link(rel="stylesheet", href="/static/css/signup.css")
+        link(rel="stylesheet", href="/static/css/eventManage.css")
+        script(src="https://kit.fontawesome.com/9031ae7b04.js", crossorigin="anonymous")
+    body 
+        header 
+            nav.navbar 
+                a(href="/").navbar__logo 
+                    img(src="/static/img/logo.png").navbar__logo--img
+        main
+            h2.request__num= Number(joinRequests.length) + " requests"
+            if joinRequests
+                each joinReq in joinRequests
+                    .request 
+                        p.request__id= joinReq.id + '.'
+                        p.request__email= joinReq.user.email
+                        p.request__message= joinReq.message
+                        - const joinReqId = joinReq.event.id;
 
-    form(action="/event/#{joinReq.event.id}/manage" method="POST")
-        input(hidden name="type" value="remove")
-        input(hidden name="joinReqId" value=joinReq.id)
-        input(type="submit")
+                        form(action=`/event/${joinReqId}/manage` method="POST")
+                            input(hidden name="type" value="allow")
+                            input(hidden name="joinReqId" value=joinReq.id)
+                            button(type="submit").request__accept 
+                                i.fa.fa-check
 
-    p= joinReq.status
+                        form(action=`/event/${joinReq.event.id}/manage` method="POST")
+                            input(hidden name="type" value="remove")
+                            input(hidden name="joinReqId" value=joinReq.id)
+                            button(type="submit").request__decline
+                                i.fa.fa-times
 
-    <hr />
+                    p= joinReq.status
 
 
 

@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: poppins;
+  color: #f0f0f0;
+}
+
+/*delete this in case you are implimenting custom cursor*/
+:root{
+    color-scheme: dark; /*turns the scrollbar into ddark mode*/
+}
+
+body{
+  background-color: #0b0b0b;
+}
+
+header {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  width: 100vw;
+  height: 10.5vh;
+}
+
+header .navbar {
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  -webkit-backdrop-filter: blur(75px);
+          backdrop-filter: blur(75px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 7fr 2fr;
+      grid-template-columns: 7fr 2fr;
+}
+
+header .navbar__logo {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0.2rem 2.8rem;
+}
+
+header .navbar__logo--img {
+  height: 1.5rem;
+}
+
+header .navbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .navbar__list__item {
+  list-style: none;
+}
+
+header .navbar__list .navbar__profile .navbar__list__item--link--img {
+  height: 2.2rem;
+  border-radius: 5rem;
+}
+
+header .navbar__list .navbar__create .navbar__list__item--link {
+  background: #1db954;
+  width: 8.38rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.45rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  font-size: 1.1rem;
+  margin-right: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #191919;
+  font-family: inherit;
+}
+
+header .navbar__list .navbar__create .navbar__list__item--link--icon {
+  margin-right: 0.34rem;
+}
+
+header .navbar__list .navbar__signup .navbar__list__item--link {
+  height: 2rem;
+  width: 8.38rem;
+  background: #e3e3e3;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: .45rem;
+  margin-right: 1rem;
+  color: #155a2d;
+}
+
+.back{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 20%;
+  left: 43%;
+  font-size: 2rem;
+  font-weight: 300;
+  background: #0f301a;
+  border: none;
+  outline: none;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.createEvent{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 20%;
+  left: 54%;
+  color: #1db954;
+  font-weight: 500;
+  font-size: 2.2rem;
+}
+
+form{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 30rem;
+  left: 46%;
+  width: 7rem;
+  color: #f0f0f0;
+}
+
+input{
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1px solid #f0f0f0;
+  width: 20rem;
+  padding: 5px 1px 5px 10px;
+  border-radius: 6px;
+  font-weight: 300;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+label{
+  font-size: 14px;
+  font-weight: 450;
+}
+
+.submitButton{
+  border:  none;
+  outline: none;
+  width: 7rem;
+  background: #1db954;
+  margin-left: 55%;
+  border-radius: 10rem;
+  font-weight: 500;
+  padding: unset;
+  padding: 0.25rem;
+}

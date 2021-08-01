@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
   await userRepo.save(user);
 
   req.session.userId = user.id;
-  res.render("signup", { msg: "Success" });
+  res.redirect("/")
 });
 
 export default app;

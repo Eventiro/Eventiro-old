@@ -5,14 +5,11 @@ header
         ul.navbar__list 
             if loggedIn==true
                 li.navbar__list__item.navbar__create
-                    a.navbar__list__item--link 
+                    a(href="/create").navbar__list__item--link 
                         i.fas.fa-plus.navbar__list__item--link--icon
                         | Create
-                li.navbar__list__item.navbar__profile
-                    a.navbar__list__item--link
-                        img(src="/static/img/steveJobs.png").navbar__list__item--link--img
             else 
                 li.navbar__list__item.navbar__login.navbar__create
-                    a.navbar__list__item--link Log In
+                    a(href="/login").navbar__list__item--link Log In
                 li.navbar__list__item.navbar__signup
                     a(href="/signup").navbar__list__item--link Sign Up

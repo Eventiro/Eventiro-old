@@ -19,7 +19,7 @@ app.get("/:id/manage", async (req, res) => {
   console.log(event);
 
   if (event.user.id !== user.id) {
-    res.render("eventManage", { error: "You do not own this event" });
+      res.redirect("/")
     return;
   }
 
@@ -45,7 +45,7 @@ app.post("/:id/manage", async (req, res) => {
   console.log(event);
 
   if (event.user.id !== user.id) {
-    res.render("eventManage", { error: "You do not own this event" });
+      res.redirect("/")
     return;
   }
 
@@ -57,13 +57,22 @@ app.post("/:id/manage", async (req, res) => {
   }
 
   const status = getStatus(mutType);
+
   const { joinReqId } = req.body;
 
   await getRepository(JoinRequest).update(joinReqId, {
     status,
   });
 
-  res.render("eventManage", { message: "success" });
+    if(status === "ALLOW"){
+
+    event.joinedMembers +=1
+
+    await getRepository(Event).save(event)
+    }
+
+  res.redirect(`/event/${req.params.id}/manage`)
+
 });
 
 app.get("/:id", async (req, res) => {
@@ -79,12 +88,12 @@ app.get("/:id", async (req, res) => {
 
   if (!joinReq) {
     // TODO logic
-    res.render("event", { error: "no access" });
+      res.redirect("/")
 
     return;
   }
 
-  res.render("event", { message: joinReq.status });
+  res.redirect(`/event/${req.params.id}/manage`)
 });
 
 function getStatus(mutType: string) {
