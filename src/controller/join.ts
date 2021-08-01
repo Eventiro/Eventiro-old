@@ -59,6 +59,7 @@ app.post("/", async (req, res) => {
 
   await joinReqRepo.save(joinReq);
 
+
   res.render("join", { msg: "success" });
 });
 
