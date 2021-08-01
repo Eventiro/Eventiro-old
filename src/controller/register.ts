@@ -10,7 +10,7 @@ const app = express.Router();
 app.use(redirectIfLogin);
 
 app.get("/", async (_, res) => {
-  res.render("register");
+  res.render("signup");
 });
 
 app.post("/", async (req, res) => {
@@ -20,7 +20,7 @@ app.post("/", async (req, res) => {
     where: { email: req.body.email },
   });
   if (userCount) {
-    res.render("register", { error: "User already exists" });
+    res.render("signup", { error: "User already exists" });
     return;
   }
 
@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
   await userRepo.save(user);
 
   req.session.userId = user.id;
-  res.render("register", { msg: "Success" });
+  res.render("signup", { msg: "Success" });
 });
 
 export default app;

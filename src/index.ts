@@ -27,7 +27,7 @@ async function main() {
   const app = express();
   app.set("view engine", "pug");
   app.set("views", join(__dirname, "/views"));
-    app.use(express.static('assets'))
+  app.use(express.static("assets"));
   app.use(express.urlencoded());
   app.use(
     session({

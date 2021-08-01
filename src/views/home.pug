@@ -25,11 +25,30 @@ mixin event(eventData)
             
 doctype html
 html
-    include ./includes/head.pug
+    head 
+        title Eventiro - Home
+        link(rel="stylesheet", href="static/css/home.css")
+        script(src="https://kit.fontawesome.com/9031ae7b04.js", crossorigin="anonymous")
+        link(rel="shortcut icon", href="/static/img/favicon.png", type="image/x-icon")
     body 
-        include ./includes/header.pug
+        header 
+            nav.navbar 
+                a(href="/").navbar__logo 
+                    img(src="/static/img/logo.png").navbar__logo--img
+                ul.navbar__list 
+                    if isLoggedIn
+                        li.navbar__list__item.navbar__create
+                            a.navbar__list__item--link 
+                                i.fas.fa-plus.navbar__list__item--link--icon
+                                | Create
+                        li.navbar__list__item.navbar__profile
+                            a.navbar__list__item--link
+                                img(src="/static/img/steveJobs.png").navbar__list__item--link--img
+                    else 
+                        li.navbar__list__item.navbar__login.navbar__create
+                            a.navbar__list__item--link Log In
+                        li.navbar__list__item.navbar__signup
+                            a(href="/signup").navbar__list__item--link Sign Up
          
         main 
-            include ./includes/event.pug
-            include ./includes/event.pug
             +event(event)

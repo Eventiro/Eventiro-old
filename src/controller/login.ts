@@ -9,7 +9,7 @@ const app = express.Router();
 app.use(redirectIfLogin);
 
 app.get("/", (_, res) => {
-  res.render("login");
+  res.render("login", { isLoggedIn: false });
 });
 
 app.post("/", async (req, res) => {
@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
   }
 
   req.session.userId = user.id;
-  res.render("login", { msg: "Sucess" });
+  res.render("login", { isLoggedIn: true, msg: "Sucess" });
 });
 
 export default app;

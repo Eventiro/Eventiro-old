@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
@@ -22,7 +22,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   overflow-x: hidden;
   background: #0b0b0b;
   color: #fff;
@@ -37,16 +37,16 @@ body main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 8vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 header {
@@ -62,11 +62,11 @@ header .navbar {
   height: 100%;
   background: #191919;
   -webkit-backdrop-filter: blur(75px);
-          backdrop-filter: blur(75px);
+  backdrop-filter: blur(75px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 7fr 2fr;
-      grid-template-columns: 7fr 2fr;
+  grid-template-columns: 7fr 2fr;
 }
 
 header .navbar__logo {
@@ -75,11 +75,11 @@ header .navbar__logo {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   padding: 0.2rem 2.8rem;
 }
 
@@ -93,14 +93,14 @@ header .navbar__list {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 header .navbar__list__item {
@@ -120,11 +120,11 @@ header .navbar__list .navbar__create .navbar__list__item--link {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 0.45rem;
   font-weight: 600;
   letter-spacing: 0.01rem;
@@ -152,13 +152,13 @@ header .navbar__list .navbar__signup .navbar__list__item--link {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
-  border-radius: .45rem;
+  border-radius: 0.45rem;
   margin-right: 1rem;
   color: #155a2d;
 }
@@ -180,8 +180,8 @@ header .navbar__list .navbar__signup .navbar__list__item--link {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .event__details--data__title {
@@ -254,11 +254,11 @@ header .navbar__list .navbar__signup .navbar__list__item--link {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #000;
   z-index: 1;
   position: absolute;
@@ -276,7 +276,7 @@ header .navbar__list .navbar__signup .navbar__list__item--link {
 }
 
 .event__main__description--text {
-  font-family: 'Rubik' !important;
+  font-family: "Rubik" !important;
   font-weight: 300;
   width: 56vw;
 }
@@ -289,11 +289,11 @@ header .navbar__list .navbar__signup .navbar__list__item--link {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 1.4rem;
 }
 
