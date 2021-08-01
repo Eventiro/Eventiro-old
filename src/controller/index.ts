@@ -7,9 +7,9 @@ const app = express.Router();
 app.use(redirectIfNoLogin);
 
 app.get("/", async (req, res) => {
-  const events = await getRepository(Event).find();
+  const events = await getRepository(Event).find({relations:["user"]});
 
-  res.render("home", { isLoggedIn: req.session.userId, event: events[0] });
+  res.render("home", { isLoggedIn: req.session.userId, events,event: events[0] });
 });
 
 export default app;
