@@ -5,13 +5,10 @@ import { compare } from "bcrypt";
 import { redirectIfLogin } from "../authMiddleware";
 
 const app = express.Router();
-
 app.use(redirectIfLogin);
-
 app.get("/", (_, res) => {
   res.render("login", { isLoggedIn: false });
 });
-
 app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
