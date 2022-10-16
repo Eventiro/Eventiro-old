@@ -88,6 +88,7 @@ app.get("/:id", async (req, res) => {
 
   if (!joinReq) {
     // TODO logic
+      console.log("Not joined")
       res.redirect("/")
 
     return;
